@@ -1,70 +1,65 @@
 import React from 'react';
 import { Activity, ~Instagram~,~Facebook~,~Twitter~,~Linkedin~ } from 'lucide-react';
 
-export default function Footer() {
-    return (
-        <footer className="bg-gray-900 text-gray-300 py-8 px-6 mt-10">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                {/* Brand */}
-                <div>
-                    <h2 className="text-xl font-semibold text-white">HomeDoc Labs</h2>
-                    <p className="text-sm mt-2">
-                        Empowering digital diagnostics and home medical solutions.
-                    </p>
-                </div>
-
-                {/* Contact Section */}
-                <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Contact</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li>
-                            <span className="font-medium text-white">Email:</span>{" "}
-                            <a 
-                                href="mailto:homedoclabs@gmail.com" 
-                                className="hover:text-blue-400"
-                            >
-                                homedoclabs@gmail.com
-                            </a>
-                        </li>
-
-                        <li>
-                            <span className="font-medium text-white">Telephone:</span>{" "}
-                            <a href="tel:0704723066" className="hover:text-blue-400">
-                                0704723066
-                            </a>{" "}
-                            /{" "}
-                            <a href="tel:0716712562" className="hover:text-blue-400">
-                                0716712562
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                {/* Socials */}
-<div>
-    <h3 className="text-lg font-semibold text-white mb-2">Follow Us</h3>
-    <ul className="space-y-2 text-sm">
-        <li>
-            <a
-                href="https://www.instagram.com/homedoc_labs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-pink-400"
-            >
-                <Instagram className="w-5 h-5" />
-                <span>@homedoc_labs</span>
-            </a>
-        </li>
-    </ul>
-</div>
-
-
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  return (
+    <footer className="bg-slate-900 text-white pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <div className="bg-teal-600 p-1.5 rounded mr-2">
+                <Activity className="text-white w-5 h-5" />
+              </div>
+              <span className="text-xl font-bold tracking-tight">HomeDoc<span className="text-teal-500">Labs</span></span>
             </div>
 
-            <div className="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
-                © {new Date().getFullYear()} HomeDoc Labs. All rights reserved.
+              <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-300 mb-4">Services</h3>
+            <ul className="space-y-3 text-slate-400 text-sm">
+              <li><button onClick={() => onNavigate(View.LAB_ANALYZER)} className="hover:text-teal-400 transition-colors">Lab Analysis</button></li>
+              <li><button onClick={() => onNavigate(View.SYMPTOM_CHECKER)} className="hover:text-teal-400 transition-colors">Symptom Checker</button></li>
+              <li><button onClick={() => onNavigate(View.DOCTOR_FINDER)} className="hover:text-teal-400 transition-colors">Find a Doctor</button></li>
+              <li><a href="#" className="hover:text-teal-400 transition-colors">Drug Development</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-300 mb-4">Company</h3>
+            <ul className="space-y-3 text-slate-400 text-sm">
+              <li><button onClick={() => onNavigate(View.ABOUT)} className="hover:text-teal-400 transition-colors">About Us</button></li>
+              <li><a href="#" className="hover:text-teal-400 transition-colors">Careers</a></li>
+              <li><a href="#" className="hover:text-teal-400 transition-colors">Investors</a></li>
+              <li><button onClick={() => onNavigate(View.CONTACT)} className="hover:text-teal-400 transition-colors">Contact</button></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-300 mb-4">Connect</h3>
+            <div className="flex space-x-4 mb-6">
+              <a href="#" className="text-slate-400 hover:text-white transition-colors"><Facebook size={20} /></a>
+              <a href="#" className="text-slate-400 hover:text-white transition-colors"><Twitter size={20} /></a>
+              <a href="#" className="text-slate-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
+              <a href="#" className="text-slate-400 hover:text-white transition-colors"><Instagram size={20} /></a>
             </div>
-        </footer>
-    );
-}
+            <div className="text-sm text-slate-500">
+              <p>1-800-HOMEDOC</p>
+              <p>support@homedoclabs.com</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+          <p>&copy; 2024 HomeDoc Labs Inc. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-slate-300">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-300">Terms of Service</a>
+            <a href="#" className="hover:text-slate-300">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
+export default Footer;
