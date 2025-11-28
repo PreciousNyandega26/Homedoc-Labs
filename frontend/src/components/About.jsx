@@ -3,6 +3,16 @@ export default function About() {
         <section id="about" className="bg-[#f4f9f4] py-20">
             <div className="mx-auto max-w-5xl px-6">
 
+                <div className="bg-white">
+      <div className="bg-slate-50 py-20">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+            <h1 className="text-4xl font-bold text-slate-900 mb-6">Our Mission</h1>
+            <p className="text-xl text-slate-600 leading-relaxed">
+                To improve health and improve lives by delivering world-class diagnostics, bringing innovative medicines to patients faster, and using technology to change the way care is provided.
+            </p>
+        </div>
+      </div>
+
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-green-800">
                         About Homedoc Labs
